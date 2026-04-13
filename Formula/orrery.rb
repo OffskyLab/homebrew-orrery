@@ -7,18 +7,18 @@ class Orrery < Formula
   on_macos do
     on_arm do
       url "https://github.com/OffskyLab/Orrery/releases/download/v#{version}/orrery-darwin-arm64.tar.gz"
-      sha256 "ba0a71e8d954e7ea0f24d22378b92a5f437eaaee6f176c9fa1f75cda34902010"
+      sha256 "62cf31623ba307e8aa260992f315ae2bf68e3ae9f86b8d0f98404f9ec31dd8ae"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/OffskyLab/Orrery/releases/download/v#{version}/orrery-linux-x86_64.tar.gz"
-      sha256 "30dd78a70d6a4954bf32713a5dbd3727f11f22eb86f94160324e791e56ee46ca"
+      sha256 "bae8d6a5156d339b3e97173bff63bdbdba3c000426deff7c2e2951ae1ccf254c"
     end
     on_arm do
       url "https://github.com/OffskyLab/Orrery/releases/download/v#{version}/orrery-linux-arm64.tar.gz"
-      sha256 "fca2a6c2f61dc6398b5e3b15092473c977ad305a830a8748b76ca7ccea8e3b1f"
+      sha256 "6c63b96c430ff8b01760883561fa6959aaddfb7acaff415527130eeb174e4cc6"
     end
   end
 
