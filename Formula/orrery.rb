@@ -1,24 +1,24 @@
 class Orrery < Formula
   desc "Orrery — AI CLI environment manager for Claude Code, Codex, and Gemini CLI"
   homepage "https://github.com/OffskyLab/Orrery"
-  version "2.2.2"
+  version "2.2.3"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
       url "https://github.com/OffskyLab/Orrery/releases/download/v#{version}/orrery-darwin-arm64.tar.gz"
-      sha256 "55bd056a2e6c4fdd609e04e293f585f50780d9322d709252fd5f50dca0d22c22"
+      sha256 "d35d6e196991c9329941f20e62f51774a455b01d68d00a86cac76a2aa3093678"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/OffskyLab/Orrery/releases/download/v#{version}/orrery-linux-x86_64.tar.gz"
-      sha256 "525355a41ba2c9d174be8f0b3ba4f10525e3f5e80ed832dc805a2ec3d42556b3"
+      sha256 "759f58a54e475c378823563b30c3a1dad5aa5d49a112bf46c5486e30b9171e65"
     end
     on_arm do
       url "https://github.com/OffskyLab/Orrery/releases/download/v#{version}/orrery-linux-arm64.tar.gz"
-      sha256 "ca927af7e266d21a4d238052ce9154fff27d1898e1b75643c40f36ee8b2413a1"
+      sha256 "e13baf5af403e0ea32365fd501645bcf0a87d255185f6f9a1e54aa5daaa62611"
     end
   end
 
