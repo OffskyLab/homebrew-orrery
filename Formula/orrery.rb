@@ -28,15 +28,18 @@ class Orrery < Formula
     because: "orbital was renamed to orrery; install one or the other"
 
   def install
-    bin.install "orrery"
+    bin.install "orrery-bin"
+    # Legacy `orrery` binary from pre-2.4 installs must be gone — the shell
+    # function in activate.sh is now the only way to invoke orrery.
+    rm_f bin/"orrery"
   end
 
   def post_install
-    # Generates ~/.orrery/activate.sh, patches the user's rc file, and
-    # performs origin takeover. `orrery setup` is idempotent and skips
-    # interactive prompts when /dev/tty is unavailable, so it's safe to
-    # run on both fresh install and upgrade.
-    system bin/"orrery", "setup"
+    # Generates ~/.orrery/activate.sh, patches the user's rc file with the
+    # lazy-bootstrap stub, and performs origin takeover. `orrery-bin setup`
+    # is idempotent and skips interactive prompts when /dev/tty is
+    # unavailable, so it's safe on both fresh install and upgrade.
+    system bin/"orrery-bin", "setup"
   rescue => e
     opoo "orrery setup failed: #{e.message}"
     opoo "Run `orrery setup` manually once brew finishes."
@@ -60,6 +63,6 @@ class Orrery < Formula
   end
 
   test do
-    assert_match "#{version}", shell_output("#{bin}/orrery --version")
+    assert_match "#{version}", shell_output("#{bin}/orrery-bin --version")
   end
 end
