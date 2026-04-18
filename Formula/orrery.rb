@@ -31,11 +31,24 @@ class Orrery < Formula
     bin.install "orrery"
   end
 
+  def post_install
+    # Generates ~/.orrery/activate.sh, patches the user's rc file, and
+    # performs origin takeover. `orrery setup` is idempotent and skips
+    # interactive prompts when /dev/tty is unavailable, so it's safe to
+    # run on both fresh install and upgrade.
+    system bin/"orrery", "setup"
+  rescue => e
+    opoo "orrery setup failed: #{e.message}"
+    opoo "Run `orrery setup` manually once brew finishes."
+  end
+
   def caveats
     <<~EOS
-      To get started, run:
+      Activate Orrery in the current shell:
 
-        orrery setup && source ~/.orrery/activate.sh
+        source ~/.orrery/activate.sh
+
+      New shells pick it up automatically via your rc file.
 
       To return to your original config at any time:
 
