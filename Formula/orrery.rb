@@ -1,24 +1,24 @@
 class Orrery < Formula
   desc "Orrery — AI CLI environment manager for Claude Code, Codex, and Gemini CLI"
   homepage "https://github.com/OffskyLab/Orrery"
-  version "2.7.0"
+  version "3.0.0"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
       url "https://github.com/OffskyLab/Orrery/releases/download/v#{version}/orrery-darwin-arm64.tar.gz"
-      sha256 "c17761b80808f6c6c5758447521e70b843967607699b53e49695279343337960"
+      sha256 "fd12b5d3b56b8bd6e8acb961f03db0d5d0fc47f91726ed6fe3c038a421c15c64"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/OffskyLab/Orrery/releases/download/v#{version}/orrery-linux-x86_64.tar.gz"
-      sha256 "a5be5f75f7f42c2094930fa78fa3d68a8528255bd0ce7db45472f3052926a080"
+      sha256 "aa2c8cb108288743924e5a10f0d27ce87240da4a1cfe1251646e095ab5e600c7"
     end
     on_arm do
       url "https://github.com/OffskyLab/Orrery/releases/download/v#{version}/orrery-linux-arm64.tar.gz"
-      sha256 "0dec0748678a446079d76a7684a86805bd0239bbd5e43aaf2cf9ef6787f3a632"
+      sha256 "46c677a4f041bce41e3c1ad514fbbb3516e7dd8d36f3e7ac9044448f8df2693e"
     end
   end
 
@@ -56,7 +56,7 @@ class Orrery < Formula
 
       To return to your original config at any time:
 
-        orrery use origin
+        orrery exit
 
       Upgrading from Orbital? Just run `orrery` — it will auto-move
       ~/.orbital/ to ~/.orrery/ and update your shell rc file on first run.
